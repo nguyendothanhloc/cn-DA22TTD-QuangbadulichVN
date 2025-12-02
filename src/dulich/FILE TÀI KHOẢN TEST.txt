@@ -1,0 +1,7 @@
+admin: admin123
+testuser: user123
+thanhloc: loc123
+
+l?i hình ?nh: http://localhost:81/dulich/add_image_column.php
+
+setup l?i m?t kh?u: http://localhost:81/dulich/setup_test_accounts.php

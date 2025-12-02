@@ -1,0 +1,13 @@
+{
+    "name": "travel-booking/user-registration",
+    "description": "Travel Booking System with User Registration",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "classmap": [
+            "tests/"
+        ]
+    }
+}

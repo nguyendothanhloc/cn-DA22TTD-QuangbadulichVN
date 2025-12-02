@@ -1,0 +1,422 @@
+/* ===================================
+   Animation & Effects CSS
+   Hiệu ứng động nhẹ nhàng cho website
+   =================================== */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale Animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Slide In Animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Glow Effect */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+    }
+}
+
+/* Float Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===================================
+   Apply Animations to Elements
+   =================================== */
+
+/* Hero Section Animation */
+.hero {
+    animation: fadeIn 1s ease-out;
+}
+
+.hero h1 {
+    animation: fadeInLeft 1s ease-out 0.2s both;
+}
+
+.hero p {
+    animation: fadeInRight 1s ease-out 0.4s both;
+}
+
+.hero .btn {
+    animation: scaleIn 0.6s ease-out 0.6s both;
+}
+
+.hero .btn:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+/* Feature Cards Animation */
+.feature-card {
+    animation: fadeIn 0.8s ease-out both;
+    transition: all 0.3s ease;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
+}
+
+.feature-card h3 {
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover h3 {
+    color: #2e7d32;
+}
+
+/* Tour Cards Animation */
+.tour-card {
+    animation: slideInUp 0.6s ease-out both;
+    transition: all 0.3s ease;
+}
+
+.tour-card:nth-child(1) { animation-delay: 0.1s; }
+.tour-card:nth-child(2) { animation-delay: 0.2s; }
+.tour-card:nth-child(3) { animation-delay: 0.3s; }
+.tour-card:nth-child(4) { animation-delay: 0.4s; }
+.tour-card:nth-child(5) { animation-delay: 0.5s; }
+.tour-card:nth-child(6) { animation-delay: 0.6s; }
+
+.tour-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(76, 175, 80, 0.25);
+}
+
+.tour-card:hover .tour-image {
+    transform: scale(1.1);
+}
+
+.tour-image {
+    transition: transform 0.5s ease;
+}
+
+/* Button Hover Effects */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* Section Title Animation */
+.section-title {
+    animation: fadeIn 0.8s ease-out;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #4caf50;
+    transition: width 0.6s ease;
+}
+
+.section-title:hover::after {
+    width: 100%;
+}
+
+/* CTA Section Animation */
+.cta-section {
+    animation: fadeIn 1s ease-out;
+}
+
+.cta-section h2 {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Navigation Menu Animation */
+.nav-menu {
+    animation: slideInUp 0.6s ease-out;
+}
+
+.nav-menu a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 80%;
+}
+
+/* Card Hover Effects */
+.card {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(76, 175, 80, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+/* Badge Animation */
+.badge {
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Row Animation */
+table tbody tr {
+    transition: all 0.3s ease;
+}
+
+table tbody tr:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.15);
+}
+
+/* Form Input Focus Animation */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    animation: pulse 0.5s ease;
+}
+
+/* Message Animation */
+.message {
+    animation: slideInUp 0.5s ease-out;
+}
+
+/* Loading Spinner Enhancement */
+.spinner {
+    animation: rotate 1s linear infinite;
+}
+
+/* Footer Animation */
+.footer {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Price Animation - Removed scale to prevent text cutoff */
+.tour-price {
+    transition: color 0.3s ease;
+}
+
+.tour-card:hover .tour-price {
+    color: #1b5e20;
+}
+
+/* Image Hover Effect */
+img {
+    transition: all 0.3s ease;
+}
+
+img:hover {
+    filter: brightness(1.1);
+}
+
+/* Link Hover Effect */
+a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page Load Animation */
+body {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+    /* Reduce animation intensity on mobile */
+    .tour-card:hover,
+    .feature-card:hover,
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Accessibility: Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

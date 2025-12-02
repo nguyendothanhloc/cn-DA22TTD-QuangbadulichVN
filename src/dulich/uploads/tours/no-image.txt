@@ -1,0 +1,9 @@
+Thư mục này dùng để lưu hình ảnh tour du lịch.
+
+Hướng dẫn:
+1. Upload ảnh có định dạng: .jpg, .jpeg, .png, .gif, .webp
+2. Kích thước khuyến nghị: 800x600px hoặc tỷ lệ 4:3
+3. Dung lượng tối đa: 5MB
+
+Lưu ý: Đặt tên file không dấu, không khoảng trắng.
+Ví dụ: halong-bay.jpg, sapa-tour.png
